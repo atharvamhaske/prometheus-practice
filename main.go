@@ -49,6 +49,6 @@ func main() {
 	
 	http.Handle("/metrics", promhttp.Handler())
 	
-	log.Panicln("Go app is running on port :8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Panicln("Go app is running on port :8000")
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }

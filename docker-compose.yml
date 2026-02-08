@@ -1,11 +1,9 @@
-version: "3"
-
 services:
   prometheus-practice:
     build: .
     container_name: go-prometheus-app
     ports:
-      - "8080:8080"
+      - "8000:8000"
     networks:
       - monitoring
   
