@@ -12,7 +12,7 @@ import (
 var (
 	httpReqTotal = prometheus.NewCounterVec(
 		prometheus.CounterOpts{
-			Name: "https_request_total",
+			Name: "http_request_total",
 			Help: "Total number of HTTP requests",
 		},
 		[]string{"method", "path", "status"},
@@ -20,7 +20,7 @@ var (
 
 	httpReqDuration = prometheus.NewHistogramVec(
 		prometheus.HistogramOpts{
-			Name: "http-request_duration_seconds",
+			Name: "http_request_duration_seconds",
 			Help: "HTTP request latency",
 		},
 		[]string{"method", "path"},
@@ -49,6 +49,6 @@ func main() {
 	
 	http.Handle("/metrics", promhttp.Handler())
 	
-	log.Panicln("Go app is running on port :8000")
+	log.Println("Go app is running on port :8000")
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
